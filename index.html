@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tool Hub</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="tool-container">
+    <h1>Tool Hub</h1>
+    
+    <!-- Time Zone Converter -->
+    <section id="timezone-tool">
+      <h2>Time Zone Converter</h2>
+      <select id="timezone-select">
+        <option value="America/New_York">Eastern Time</option>
+        <option value="America/Chicago">Central Time</option>
+        <option value="America/Denver">Mountain Time</option>
+        <option value="America/Los_Angeles">Pacific Time</option>
+        <option value="America/Anchorage">Alaska Time</option>
+        <option value="Pacific/Honolulu">Hawaii Time</option>
+      </select>
+      <div id="time-display"></div>
+    </section>
+    
+    <!-- Script Customization -->
+    <section id="script-tool">
+      <h2>Script Customization</h2>
+      <textarea id="script-textarea" placeholder="Enter custom script here..."></textarea>
+      <button id="save-script">Save Script</button>
+      <div id="script-display"></div>
+    </section>
+    
+    <!-- Callback Notes -->
+    <section id="callback-tool">
+      <h2>Callback Notes</h2>
+      <textarea id="callback-textarea" placeholder="Enter callback notes here..."></textarea>
+      <button id="save-callback">Save Notes</button>
+      <div id="callback-display"></div>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
