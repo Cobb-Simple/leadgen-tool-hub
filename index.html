@@ -26,18 +26,21 @@
         <div id="timezoneTimeDisplay" aria-live="polite">Timezone time will be displayed here</div>
 
 
-        <label for="scriptDropdown">Script:</label>
-        <select id="scriptDropdown" aria-label="Script">
+        <label for="callNotes">Script:</label>
+        <select id="callNotes" aria-label="Script">
             <option value="">Select a script</option>
-            <option value="script1">Script 1</option>
-            <option value="script2">Script 2</option>
-            <option value="script3">Script 3</option>
+            <option value="note1">Spoke to "Lead Name" and he agreed on a call later today. This is for possibly updating a website.</option>
+            <option value="note2">Spoke to "Lead Name" and asked for pricing on a website. Agreed on a call today.</option>
+            <option value="note3">Spoke to "Lead Name", he's busy as of the moment but agreed on a call later today for possibly building a website.</option>
+            <option value="note4">Spoke to "Lead Name", she's busy today but said we can call her tomorrow. This is for updating a website. </option>
+            <option value="note5">Spoke to "Lead Name", looking to build a website for his business. Wanted a call at 3pm EST later today.</option>
+            <option value="note5">Spoke to "Lead Name", he wanted to talk to Bob tomorrow for pricing and samples. He's thinking about enhancing his website.</option>
+            <option value="note5">Spoke to "Lead Name", he asked how much it would cost to host and maintain a website. Agreed on a call anytime after 1pm EST today.</option>
         </select>
-        <div id="scriptTextDisplay">Script text will appear here</div>
+        <div id="callNotesTextDisplay">Script text will appear here</div>
 
-        <label for="callNotes">Call Notes:</label>
-        <textarea id="callNotes" rows="5" placeholder="Enter call notes here" aria-label="Call notes"></textarea>
-
+        
+        <button id="clearButton" aria-label="Clear">Clear</button>
         <button id="submitButton" aria-label="Submit">Submit</button>
     </div>
    

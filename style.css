@@ -39,14 +39,25 @@ textarea {
 }
 
 button {
-  width: 100%;
-  padding: 10px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-size: 16px;
-  cursor: pointer;
+  padding: 5px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 2px solid #ddd;
+    cursor: pointer;
+    margin: 5px;
+}
+
+#clearButton {
+  background-color: #FFCCCB; /* Light pastel red */
+  border-color: #FFB6B6;
+  color: #333;
+}
+
+#submitButton {
+  background-color: #B3E5FC; /* Light pastel blue */
+  border-color: #81D4FA;
+  color: #333;
 }
 
 button.clicked {
@@ -64,7 +75,7 @@ button.clicked {
 
 
 button:hover {
-  background-color: #45a049;
+  opacity: 0.9;
 }
 
 #timezoneTimeDisplay, #zapierTimeDisplay, #scriptTextDisplay {

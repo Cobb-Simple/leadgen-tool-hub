@@ -21,7 +21,6 @@
   "content_security_policy": {
     "extension_pages": "script-src 'self'; connect-src 'self' https://script.google.com/macros/ https://hooks.zapier.com https://script.googleusercontent.com"
   },
-  "options_page": "options.html",
   "icons": {
     "16": "images/icon16.png"
   }

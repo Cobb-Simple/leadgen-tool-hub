@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Select elements
     const submitButton = document.getElementById("submitButton");
+    const clearButton = document.getElementById("clearButton"); // Added clear button
     const phoneNumberInput = document.getElementById("phoneNumber");
     const resultsDiv = document.getElementById("results");
     const timezoneTimeDisplay = document.getElementById("timezoneTimeDisplay");
@@ -10,12 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Function to display the selected timezone time
     function displayTimeBySelectedTimezone(timeZone) {
-        // Clear the previous interval if there is one
         if (currentInterval) {
             clearInterval(currentInterval);
         }
-
-        // Clear the previous time display
         timezoneTimeDisplay.textContent = '';
 
         function updateTime() {
@@ -24,27 +22,22 @@ document.addEventListener("DOMContentLoaded", () => {
                 hour: '2-digit',
                 minute: '2-digit',
                 second: '2-digit',
-                timeZone: timeZone,  // Use the full timeZone identifier
+                timeZone: timeZone,
                 hour12: true
             }).format(currentTime);
             timezoneTimeDisplay.textContent = `Current Time (${timeZone}): ${timeString}`;
         }
 
-        // Initialize time display
         updateTime();
-
-        // Set a new interval for the selected timezone
         currentInterval = setInterval(updateTime, 1000);
     }
 
-    // Add change event listener to timezone dropdown
     timezoneDropdown.addEventListener("change", () => {
         const selectedTimeZone = timezoneDropdown.value;
         const fullTimeZone = mapTimezoneToFullTimezone(selectedTimeZone);
         displayTimeBySelectedTimezone(fullTimeZone);
     });
 
-    // Add click event listener to the submit button
     submitButton.addEventListener("click", handleSubmit);
 
     function handleSubmit() {
@@ -83,8 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const data = await response.json();
             displayFetchedData(data);
-            // Use the correct function call here
-            displayTimeBySelectedTimezone(data.timeZone);  // Pass the correct timeZone data
+            displayTimeBySelectedTimezone(data.timeZone);
         } catch (error) {
             console.error("Error fetching data from Apps Script:", error);
             resultsDiv.innerHTML = `<p>Error fetching data. Please try again.</p>`;
@@ -108,15 +100,15 @@ document.addEventListener("DOMContentLoaded", () => {
     function mapTimezoneToFullTimezone(timezone) {
         switch (timezone) {
             case "EST":
-                return "US/Eastern"; // Eastern Time
+                return "US/Eastern";
             case "CST":
-                return "US/Central"; // Central Time
+                return "US/Central";
             case "MST":
-                return "US/Mountain"; // Mountain Time
+                return "US/Mountain";
             case "PST":
-                return "US/Pacific"; // Pacific Time
+                return "US/Pacific";
             default:
-                return "UTC"; // Default to UTC if no valid timezone is selected
+                return "UTC";
         }
     }
 
@@ -125,4 +117,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const fullTimeZone = mapTimezoneToFullTimezone(timezoneDropdown.value);
         displayTimeBySelectedTimezone(fullTimeZone);
     }
+
+    // Clear button functionality to clear resultsDiv content
+    clearButton.addEventListener("click", () => {
+        resultsDiv.innerHTML = "";
+    });
 });
