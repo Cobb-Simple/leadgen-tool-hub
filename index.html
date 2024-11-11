@@ -1,45 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tool Hub</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tool Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
-  <div id="tool-container">
-    <h1>Tool Hub</h1>
-    
-    <!-- Time Zone Converter -->
-    <section id="timezone-tool">
-      <h2>Time Zone Converter</h2>
-      <select id="timezone-select">
-        <option value="America/New_York">Eastern Time</option>
-        <option value="America/Chicago">Central Time</option>
-        <option value="America/Denver">Mountain Time</option>
-        <option value="America/Los_Angeles">Pacific Time</option>
-        <option value="America/Anchorage">Alaska Time</option>
-        <option value="Pacific/Honolulu">Hawaii Time</option>
-      </select>
-      <div id="time-display"></div>
-    </section>
-    
-    <!-- Script Customization -->
-    <section id="script-tool">
-      <h2>Script Customization</h2>
-      <textarea id="script-textarea" placeholder="Enter custom script here..."></textarea>
-      <button id="save-script">Save Script</button>
-      <div id="script-display"></div>
-    </section>
-    
-    <!-- Callback Notes -->
-    <section id="callback-tool">
-      <h2>Callback Notes</h2>
-      <textarea id="callback-textarea" placeholder="Enter callback notes here..."></textarea>
-      <button id="save-callback">Save Notes</button>
-      <div id="callback-display"></div>
-    </section>
-  </div>
-  <script src="script.js"></script>
+    <div class="container">
+        <label for="contactID">Phone Number:</label>
+        <input type="text" id="phoneNumber" placeholder="Enter Contact ID" aria-label="Phone Number">
+
+        <div id="results">
+        </div>
+
+        <label for="timezoneDropdown">Timezone:</label>
+        <select id="timezoneDropdown" aria-label="Timezone">
+            <option value="EST">Eastern Time (EST)</option>
+            <option value="CST">Central Time (CST)</option>
+            <option value="MST">Mountain Time (MST)</option>
+            <option value="PST">Pacific Time (PST)</option>
+        </select>
+
+        <div id="timezoneTimeDisplay" aria-live="polite">Timezone time will be displayed here</div>
+
+
+        <label for="scriptDropdown">Script:</label>
+        <select id="scriptDropdown" aria-label="Script">
+            <option value="">Select a script</option>
+            <option value="script1">Script 1</option>
+            <option value="script2">Script 2</option>
+            <option value="script3">Script 3</option>
+        </select>
+        <div id="scriptTextDisplay">Script text will appear here</div>
+
+        <label for="callNotes">Call Notes:</label>
+        <textarea id="callNotes" rows="5" placeholder="Enter call notes here" aria-label="Call notes"></textarea>
+
+        <button id="submitButton" aria-label="Submit">Submit</button>
+    </div>
+   
 </body>
 </html>

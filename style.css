@@ -1,39 +1,154 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    padding: 10px;
-    width: 300px;
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f4f9;
+}
+
+.container {
+  max-width: 400px; /* Increased width to accommodate longer text */
+  min-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  font-size: 14px;
+  color: #333;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"], select, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button.clicked {
+  background-color: #3e8e41; /* Darker green */
+  transform: scale(0.98); /* Slightly shrink the button */
+  transition: background-color 0.2s, transform 0.1s; /* Smooth transitions */
+}
+
+.clicked {
+  background-color: #007bff; /* Change to your desired color */
+  color: white;
+  transform: scale(0.95); /* Shrink effect */
+  transition: background-color 0.2s, transform 0.2s; /* Smooth transition */
+}
+
+
+button:hover {
+  background-color: #45a049;
+}
+
+#timezoneTimeDisplay, #zapierTimeDisplay, #scriptTextDisplay {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+  padding: 8px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%; /* Ensure full width for content display */
+  white-space: normal; /* Allow text wrapping for long text */
+}
+#results {
+  width: 100%;
+  max-width: 600px; /* Adjust the maximum width */
+  margin: 20px auto; /* Centers the div */
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#results p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 10px 0;
+  color: #333;
+}
+
+/* Highlight key values with alternating pastel colors */
+#results p:nth-child(even) {
+  background-color: #f3f4f6; /* Light pastel gray for even entries */
+}
+
+#results p:nth-child(odd) {
+  background-color: #e6f7f7; /* Light pastel blue for odd entries */
+}
+
+/* Make labels stand out in bold */
+#results p strong {
+  font-weight: bold;
+  color: #2d2d2d;
+}
+
+/* Time zone display */
+#results p:contains("Time Zone") {
+  font-size: 18px;
+  font-weight: bold;
+  color: #0056b3;
+}
+
+/* Custom styling for phone number */
+#results p:contains("Phone Number") {
+  font-size: 16px;
+  color: #e67e22;
+  font-style: italic;
+}
+
+/* Partner location with background */
+#results p:contains("Partner Location") {
+  background-color: #f0f8ff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Styling for the 'Contact ID' and other key labels */
+#results p:contains("Contact ID"),
+#results p:contains("Company Name") {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  #results {
+      padding: 15px;
+      font-size: 14px;
   }
-  
-  #tool-container {
-    text-align: center;
+
+  #results p {
+      margin: 8px 0;
   }
-  
-  h1 {
-    font-size: 1.4em;
-    margin-bottom: 10px;
-  }
-  
-  h2 {
-    font-size: 1.2em;
-    margin-top: 20px;
-  }
-  
-  textarea {
-    width: 100%;
-    height: 50px;
-    margin-bottom: 10px;
-    padding: 5px;
-  }
-  
-  button {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-  }
-  
-  #time-display, #script-display, #callback-display {
-    font-size: 1em;
-    font-weight: bold;
-    margin-top: 10px;
-  }
-  
+}
+
